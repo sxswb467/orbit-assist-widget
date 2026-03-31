@@ -1,8 +1,10 @@
 # Orbit Assist Demo
 
-I built this project as a portfolio piece to show how I approach modern SaaS frontend work when the goal is not just to make something look polished, but to make it feel usable, production-minded, and easy to extend.
+Orbit Assist is a portfolio project for an embedded AI support experience inside a B2B product surface. I built it to demonstrate how I approach product interface work end to end: shaping the concept, defining the UI architecture, designing the interaction model, building the component system, and presenting the result as something that feels credible rather than purely decorative.
 
-Orbit Assist is a frontend concept for an embedded AI support experience inside a B2B product surface. I use it to demonstrate the kind of work I want to be hired for: thoughtful UI architecture, interaction design, accessibility, design-system discipline, and product interfaces that feel believable rather than purely decorative.
+This project is not only about frontend implementation. It is also meant to show my skill range across product UX, information hierarchy, design-system thinking, accessibility, responsive behavior, and motion design. I use React and TypeScript to structure the experience, Tailwind CSS to build a reusable visual system, and Framer Motion to add transitions that support hierarchy, state change, and spatial continuity instead of acting as visual noise.
+
+Orbit Assist also illustrates how I think about handoff quality. The repo includes reusable sections, token-driven styling, a configurable widget workflow, preview-first interaction patterns, and visual regression coverage so the project reads like a serious product artifact, not just a one-off landing page.
 
 ## Screenshots
 

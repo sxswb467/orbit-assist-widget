@@ -7,8 +7,8 @@ export function DesignSystemPage() {
     <PageSection className="py-16 lg:py-20">
       <SectionHeading
         eyebrow="Design System"
-        title="Tokens, surface rules, and handoff-ready decisions"
-        body="This route now reflects the same architecture as the rest of the app: shared section framing, reusable surfaces, and a token story that backs the UI instead of existing only as a presentation artifact."
+        title="Tokens, surface tiers, and handoff-ready UI rules"
+        body="This route documents the darker AI-platform direction behind the redesign: how the shell, support panels, spacing rhythm, and accent behavior work together as one product system."
       />
       <div className="mt-10">
         <DesignTokenPanel />

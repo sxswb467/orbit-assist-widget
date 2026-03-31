@@ -1,49 +1,49 @@
 import type { OverlayItem, WidgetConfig } from '../lib/types';
 
 export const defaultWidgetConfig: WidgetConfig = {
-  brandColor: '#5b6cf8',
-  greeting: 'Hi! I can help summarize customer feedback or explain any dashboard metric.',
+  brandColor: '#7b5cff',
+  greeting: 'Hi! I can summarize account health, explain product signals, and cite the source behind each answer.',
   tone: 'professional',
   showSources: true,
   compactMode: false,
 };
 
 export const overlaySeed: OverlayItem[] = [
-  { id: '1', label: 'ARR +18%', x: 16, y: 24, width: 112, kind: 'metric' },
-  { id: '2', label: 'Redaction zone', x: 220, y: 64, width: 148, kind: 'chip' },
-  { id: '3', label: 'Renewal blocker', x: 114, y: 182, width: 148, kind: 'note' },
+  { id: '1', label: 'Expansion +18%', x: 16, y: 24, width: 124, kind: 'metric' },
+  { id: '2', label: 'Protected note zone', x: 244, y: 66, width: 166, kind: 'chip' },
+  { id: '3', label: 'Renewal blocker', x: 118, y: 220, width: 148, kind: 'note' },
 ];
 
 export const chatMessages = [
   {
     role: 'assistant',
-    text: 'I can answer product questions, summarize notes, and guide non-technical teams through setup.',
+    text: 'I can explain account movement, summarize support context, and point to the product or policy source behind each answer.',
   },
   {
     role: 'user',
-    text: 'What patterns here show good B2B SaaS UX?',
+    text: 'What makes this feel like a believable enterprise AI widget?',
   },
   {
     role: 'assistant',
-    text: 'Clear information hierarchy, progressive disclosure, configuration previews, and low-friction actions with strong defaults.',
+    text: 'The controls stay operator-friendly, the host canvas keeps product context visible, and the chat demonstrates trust with explicit citations.',
   },
 ];
 
 export const featureCards = [
   {
-    title: 'Navigation that works on mobile',
-    body: 'The layout now includes a dedicated mobile menu instead of hiding primary routes below the desktop breakpoint.',
+    title: 'A hero that tells the product story immediately',
+    body: 'The first screen now sells the embedded AI workflow with stronger hierarchy, denser proof, and a dashboard-style visual language.',
   },
   {
-    title: 'Less portfolio narration, more product framing',
-    body: 'The first viewport emphasizes the operator workflow and preview model instead of a generic stack of self-describing feature cards.',
+    title: 'Premium dark-system styling with one shared logic',
+    body: 'Panels, edge-lighting, spacing, and token behavior now align across the app instead of drifting route by route.',
   },
   {
-    title: 'Accessible control language',
-    body: 'Segmented controls, switches, placeholders, and form fields now have stronger focus treatment and more explicit semantics.',
+    title: 'A widget that feels deployable, not ornamental',
+    body: 'The control rail, host canvas, and assistant stream now read like parts of one embedded product experience.',
   },
   {
-    title: 'Shared surfaces over repeated hardcoding',
-    body: 'Global surface classes and section framing reduce the amount of one-off panel styling spread across the routes.',
+    title: 'Clearer proof of UX maturity and frontend craft',
+    body: 'Mobile navigation, accessible controls, responsive layout rhythm, and interaction clarity all reinforce the demo as a serious portfolio piece.',
   },
 ];

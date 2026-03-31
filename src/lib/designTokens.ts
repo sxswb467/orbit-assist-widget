@@ -1,9 +1,9 @@
 export const colorTokens = [
-  { name: 'Brand / Primary', value: '#5b6cf8', use: 'CTA, focus, motion accent' },
-  { name: 'Accent / Mint', value: '#6ee7d2', use: 'Selection, insights, trust cues' },
-  { name: 'Glow / Blush', value: '#f3a6d7', use: 'Atmosphere, highlight gradients' },
-  { name: 'Canvas / 950', value: '#061018', use: 'App shell and deep background' },
-  { name: 'Text / 50', value: '#f8fafc', use: 'Readable surface contrast' },
+  { name: 'Brand / Primary', value: '#7b5cff', use: 'Primary CTA, active states, system emphasis' },
+  { name: 'Accent / Glow', value: '#9f8cff', use: 'Highlights, supportive accents, visual depth' },
+  { name: 'Glow / Electric', value: '#5f46ff', use: 'Hero atmosphere and luminous edge-lighting' },
+  { name: 'Canvas / Base', value: '#05060d', use: 'Shell background and deep workspace tone' },
+  { name: 'Text / High', value: '#f8f8ff', use: 'Primary surface contrast and headline clarity' },
 ];
 
 export const spacingTokens = [
@@ -17,8 +17,8 @@ export const spacingTokens = [
 ];
 
 export const figmaNotes = [
-  'Shared section framing reduces repeated max-width and spacing decisions across routes.',
-  'Surface styles now come from reusable classes instead of being re-authored panel by panel.',
-  'The widget preview avoids nested editable controls, which makes the interaction model cleaner to hand off.',
-  'Navigation and focus treatments are part of the system rather than one-off accessibility patches.',
+  'The app shell, hero, and widget now share one dark cinematic product language instead of mixed visual metaphors.',
+  'Surface tiers are intentional: shell, support, and utility layers each have a distinct role and contrast level.',
+  'The interactive widget still keeps architecture improvements from the earlier refactor, but now presents them with stronger product credibility.',
+  'Token decisions are framed around deployable UI behavior, not just standalone design-system slides.',
 ];

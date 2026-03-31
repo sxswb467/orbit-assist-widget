@@ -50,7 +50,7 @@ export function WidgetSimulator({ expanded = false }: { expanded?: boolean }) {
       />
 
       <section className="space-y-5">
-        <div className="surface-panel-strong relative overflow-hidden rounded-[32px] p-6">
+        <div className="surface-panel-strong relative overflow-hidden rounded-[16px] p-6">
           <div className="absolute inset-0 panel-grid bg-grid opacity-20" aria-hidden="true" />
           <div className="relative grid gap-4 xl:grid-cols-[minmax(0,1fr)_360px]">
             <HostCanvasPreview

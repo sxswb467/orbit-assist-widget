@@ -6,16 +6,22 @@ import { PageSection } from '../components/PageSection';
 import { SectionHeading } from '../components/SectionHeading';
 import { WidgetSimulator } from '../components/WidgetSimulator';
 
-const heroStats = [
-  { label: 'Setup time', value: '4 min' },
-  { label: 'Source-aware replies', value: '92%' },
-  { label: 'Playbook coverage', value: '18 teams' },
+const heroMetrics = [
+  { label: 'Onboarding speed', value: '4 min' },
+  { label: 'Citation coverage', value: '92%' },
+  { label: 'Teams supported', value: '18' },
 ];
 
-const heroThreads = [
-  'Operators can tune voice, greetings, and citations without engineering help.',
-  'The preview keeps configuration and output in one field of view.',
-  'Motion only supports hierarchy, state change, and confidence.',
+const workflowLanes = [
+  'Operator controls stay visible while the preview updates in real time.',
+  'The host product surface keeps charts, notes, and redaction patterns in context.',
+  'The assistant stream demonstrates trust with source-aware responses and cleaner hierarchy.',
+];
+
+const platformSignals = [
+  { name: 'Deployability', detail: 'A believable embedded widget flow, not just a landing page treatment.' },
+  { name: 'UX maturity', detail: 'Accessible controls, mobile-safe navigation, and higher-signal page structure.' },
+  { name: 'Frontend craft', detail: 'Reusable surfaces, token-backed styling, and stronger interaction boundaries.' },
 ];
 
 export function HomePage() {
@@ -24,38 +30,52 @@ export function HomePage() {
   return (
     <div className="pb-24">
       <PageSection className="pt-12 lg:pt-20">
-        <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,0.92fr)_minmax(0,1.08fr)] lg:gap-14">
+        <div className="grid items-start gap-10 lg:grid-cols-[minmax(0,0.9fr)_minmax(0,1.1fr)] lg:gap-14">
           <div className="relative pt-6">
-            <div className="pill-label">Orbit Assist Demo System</div>
-            <h1 className="text-balance mt-8 max-w-3xl text-5xl font-semibold tracking-tight text-white sm:text-6xl xl:text-7xl">
-              A sharper demo for embedded AI support inside real product surfaces.
+            <div className="pill-label">Portfolio Project • Embedded AI Experience</div>
+            <h1 className="text-balance mt-8 max-w-4xl text-5xl font-semibold tracking-[-0.05em] text-white sm:text-6xl xl:text-[5.2rem] xl:leading-[0.94]">
+              AI-powered support, presented like a premium product instead of a generic demo.
             </h1>
             <p className="mt-6 max-w-2xl text-lg leading-8 text-slate-300">
-              This version shifts the project from a generic portfolio landing page toward a product story: faster setup,
-              clearer operator controls, stronger preview hierarchy, and fewer decorative UI patterns.
+              I redesigned Orbit Assist around the visual language of modern AI platforms: deeper contrast, sharper hierarchy,
+              stronger dashboard cues, and a widget flow that feels much closer to something a product team could actually ship.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
               <Link
                 to="/playground"
-                className="focus-ring rounded-full bg-white px-6 py-3 text-base font-semibold text-slate-950 transition-transform duration-200 hover:-translate-y-0.5"
+                className="focus-ring rounded-[10px] border border-brand/30 bg-brand px-6 py-3 text-base font-semibold uppercase tracking-[0.12em] text-white shadow-[0_18px_45px_rgba(95,70,255,0.28)] transition-transform duration-200 hover:-translate-y-0.5"
               >
-                Open Playground
+                Open live playground
               </Link>
               <a
                 href="#design-system"
-                className="focus-ring rounded-full border border-white/15 bg-white/5 px-6 py-3 text-base font-semibold text-white transition-colors duration-200 hover:bg-white/10"
+                className="focus-ring rounded-[10px] border border-white/10 bg-white/[0.04] px-6 py-3 text-base font-semibold uppercase tracking-[0.12em] text-white transition-colors duration-200 hover:bg-white/[0.08]"
               >
-                Review Design System
+                Review system details
               </a>
             </div>
+
             <div className="mt-12 grid gap-4 sm:grid-cols-3">
-              {heroStats.map((stat) => (
-                <div key={stat.label} className="border-t border-white/10 pt-4">
-                  <div className="metric-value text-2xl font-semibold text-white">{stat.value}</div>
-                  <div className="mt-2 text-sm text-slate-400">{stat.label}</div>
+              {heroMetrics.map((metric) => (
+                <div key={metric.label} className="surface-subtle rounded-[12px] p-4">
+                  <div className="metric-value text-3xl font-semibold text-white">{metric.value}</div>
+                  <div className="mt-2 text-sm text-slate-400">{metric.label}</div>
                 </div>
               ))}
             </div>
+
+            <div className="mt-10 grid gap-4">
+              {platformSignals.map((signal) => (
+                <div key={signal.name} className="flex gap-4 rounded-[12px] border border-white/8 bg-white/[0.03] px-4 py-4">
+                  <div className="mt-1 h-2.5 w-2.5 rounded-full bg-accent shadow-[0_0_14px_rgba(159,140,255,0.8)]" aria-hidden="true" />
+                  <div>
+                    <div className="text-sm font-semibold uppercase tracking-[0.16em] text-[#d3cbff]">{signal.name}</div>
+                    <p className="mt-2 text-sm leading-7 text-slate-300">{signal.detail}</p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
             <div className="hero-orbit" aria-hidden="true" />
           </div>
 
@@ -63,55 +83,75 @@ export function HomePage() {
             initial={reduceMotion ? { opacity: 1 } : { opacity: 0, y: 22 }}
             animate={reduceMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
             transition={{ duration: 0.45 }}
-            className="surface-panel-strong relative overflow-hidden rounded-[36px] p-6 sm:p-8"
+            className="platform-shell p-6 sm:p-7"
           >
-            <div className="grid-sheen absolute inset-0 opacity-25" aria-hidden="true" />
-            <div className="absolute inset-x-10 top-0 h-px bg-gradient-to-r from-transparent via-white/40 to-transparent" aria-hidden="true" />
+            <div className="grid-sheen absolute inset-0 opacity-20" aria-hidden="true" />
             <div className="relative space-y-6">
               <div className="flex flex-wrap items-center justify-between gap-4">
                 <div>
-                  <div className="eyebrow text-[0.72rem] text-brand/90">Product Direction</div>
-                  <h2 className="text-balance text-3xl font-semibold text-white">One operator rail, one live preview, one believable workflow.</h2>
+                  <div className="eyebrow mb-2">Product Narrative</div>
+                  <h2 className="text-balance max-w-2xl text-3xl font-semibold tracking-tight text-white">
+                    One shell, one live operator lane, one believable embedded AI workflow.
+                  </h2>
                 </div>
-                <div className="rounded-full border border-emerald-400/20 bg-emerald-400/10 px-4 py-2 text-sm text-emerald-200">
-                  Live demo posture
+                <div className="rounded-[8px] border border-emerald-400/20 bg-emerald-400/10 px-4 py-2 text-sm uppercase tracking-[0.12em] text-emerald-200">
+                  Demo posture online
                 </div>
               </div>
 
-              <div className="grid gap-4 md:grid-cols-[minmax(0,1fr)_260px]">
-                <div className="surface-subtle rounded-[28px] p-5">
-                  <div className="flex items-center justify-between gap-3 border-b border-white/10 pb-4">
-                    <div>
-                      <div className="text-sm uppercase tracking-[0.22em] text-slate-500">Operator Rail</div>
-                      <div className="mt-2 text-xl font-semibold text-white">Configuration stays close to the preview</div>
-                    </div>
-                    <div className="rounded-full bg-white/10 px-3 py-1 text-xs font-medium text-slate-200">Focused</div>
-                  </div>
-                  <div className="mt-5 space-y-4">
-                    {heroThreads.map((item) => (
-                      <div key={item} className="flex gap-3 border-b border-white/10 pb-4 last:border-b-0 last:pb-0">
-                        <div className="mt-1 h-2.5 w-2.5 rounded-full bg-accent" aria-hidden="true" />
-                        <p className="min-w-0 text-sm leading-7 text-slate-300">{item}</p>
-                      </div>
-                    ))}
+              <div className="grid gap-4 xl:grid-cols-[220px_minmax(0,1fr)]">
+                <div className="surface-subtle rounded-[14px] p-5">
+                  <div className="text-xs uppercase tracking-[0.22em] text-slate-500">Modules</div>
+                  <div className="mt-4 space-y-3">
+                    <div className="rounded-[10px] border border-brand/20 bg-brand/10 px-4 py-3 text-sm uppercase tracking-[0.12em] text-[#ebe6ff]">Overview</div>
+                    <div className="rounded-[10px] border border-white/8 bg-white/[0.03] px-4 py-3 text-sm uppercase tracking-[0.12em] text-slate-300">Playground</div>
+                    <div className="rounded-[10px] border border-white/8 bg-white/[0.03] px-4 py-3 text-sm uppercase tracking-[0.12em] text-slate-300">System</div>
+                    <div className="rounded-[10px] border border-white/8 bg-white/[0.03] px-4 py-3 text-sm uppercase tracking-[0.12em] text-slate-300">Trust controls</div>
                   </div>
                 </div>
 
-                <div className="space-y-4">
-                  <div className="surface-subtle rounded-[28px] p-5">
-                    <div className="text-sm uppercase tracking-[0.22em] text-slate-500">Current State</div>
-                    <div className="mt-3 text-3xl font-semibold text-white">Ready</div>
-                    <p className="mt-2 text-sm leading-6 text-slate-300">
-                      The interface now reads like a compact product artifact instead of a stack of portfolio callouts.
-                    </p>
+                <div className="grid gap-4">
+                  <div className="grid gap-4 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,0.8fr)]">
+                    <div className="surface-subtle rounded-[14px] p-5">
+                      <div className="flex items-center justify-between gap-3">
+                        <div>
+                          <div className="text-xs uppercase tracking-[0.22em] text-slate-500">Growth analytics</div>
+                          <div className="mt-2 text-xl font-semibold text-white">Embedded support performance tied to product context.</div>
+                        </div>
+                        <div className="rounded-[8px] border border-white/8 bg-white/[0.03] px-3 py-1 text-xs uppercase tracking-[0.12em] text-slate-300">
+                          Q2 live
+                        </div>
+                      </div>
+                      <div className="chart-bars mt-8 flex h-36 items-end gap-3">
+                        <span style={{ height: '34%' }} />
+                        <span style={{ height: '44%' }} />
+                        <span style={{ height: '62%' }} />
+                        <span style={{ height: '54%' }} />
+                        <span style={{ height: '76%' }} />
+                        <span style={{ height: '82%' }} />
+                        <span style={{ height: '96%' }} />
+                      </div>
+                    </div>
+
+                    <div className="surface-subtle rounded-[14px] p-5">
+                      <div className="text-xs uppercase tracking-[0.22em] text-slate-500">Platform state</div>
+                      <div className="mt-3 text-4xl font-semibold tracking-tight text-white">Ready</div>
+                      <p className="mt-3 text-sm leading-6 text-slate-300">
+                        The app now leads with a dashboard-grade artifact and keeps the portfolio story inside the product framing.
+                      </p>
+                    </div>
                   </div>
-                  <div className="surface-subtle rounded-[28px] p-5">
-                    <div className="text-sm uppercase tracking-[0.22em] text-slate-500">Preview Rules</div>
-                    <ul className="mt-3 space-y-2 text-sm leading-6 text-slate-300">
-                      <li>Clear focus states across controls</li>
-                      <li>Reduced mobile navigation failure</li>
-                      <li>Live rename for canvas overlays</li>
-                    </ul>
+
+                  <div className="surface-subtle rounded-[14px] p-5">
+                    <div className="text-xs uppercase tracking-[0.22em] text-slate-500">What changed</div>
+                    <div className="mt-4 grid gap-3">
+                      {workflowLanes.map((item) => (
+                        <div key={item} className="flex gap-3 rounded-[10px] border border-white/8 bg-white/[0.03] px-4 py-3">
+                          <div className="mt-1 h-2 w-2 rounded-full bg-accent shadow-[0_0_12px_rgba(159,140,255,0.7)]" aria-hidden="true" />
+                          <p className="text-sm leading-7 text-slate-300">{item}</p>
+                        </div>
+                      ))}
+                    </div>
                   </div>
                 </div>
               </div>
@@ -122,9 +162,9 @@ export function HomePage() {
 
       <PageSection className="pt-16">
         <SectionHeading
-          eyebrow="What improved"
-          title="A stronger information architecture for the same demo narrative"
-          body="The project still shows the same capabilities, but the page now leads with the actual product surface, trims self-referential copy, and relies more on layout rhythm than glassmorphism card stacks."
+          eyebrow="UI Direction"
+          title="A cinematic AI-platform style with stronger proof, sharper rhythm, and less portfolio filler"
+          body="This direction takes cues from premium analytics products: near-black surfaces, luminous violet accents, dashboard signals, and structure that puts the product workflow ahead of self-description."
         />
         <FeatureCardGrid />
       </PageSection>
@@ -132,8 +172,8 @@ export function HomePage() {
       <PageSection className="pt-16">
         <SectionHeading
           eyebrow="Interactive Demo"
-          title="Tune the assistant, rename overlays, and inspect the host experience"
-          body="The widget playground is now structured more like a real operator workflow. Configuration, canvas state, preview chat, and embed output are distinct surfaces with clearer responsibility."
+          title="The widget now looks and behaves like part of the same platform world"
+          body="Configuration, workspace context, assistant responses, and embed export are grouped into one system. The refactor from earlier is still intact, but the presentation now carries more product credibility."
         />
         <div className="mt-10">
           <WidgetSimulator />
@@ -143,8 +183,8 @@ export function HomePage() {
       <PageSection id="design-system" className="section-anchor pt-16">
         <SectionHeading
           eyebrow="Design System"
-          title="Shared tokens and surfaces that support the demo instead of competing with it"
-          body="The visual system now leans on reusable surface treatments, type rhythm, and global tokens so future changes do not have to repeat hardcoded panel styles in every route."
+          title="Shared tokens, surface tiers, and visual rules that support the AI product narrative"
+          body="The system page now explains the UI as something I would hand off: not just colors and spacing, but the logic behind shells, support panels, and luminous emphasis states."
         />
         <div className="mt-10">
           <DesignTokenPanel />

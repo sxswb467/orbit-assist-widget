@@ -27,26 +27,31 @@ export function WidgetControlPanel({
   onOverlayLabelChange,
 }: WidgetControlPanelProps) {
   return (
-    <aside className="surface-panel-strong rounded-[30px] p-5">
+    <aside className="surface-panel-strong rounded-[14px] p-5 sm:p-6">
       <div className="flex items-start justify-between gap-4">
         <div>
-          <h3 className="text-xl font-semibold text-white">Operator Controls</h3>
-          <p className="mt-1 text-sm text-slate-400">Configure the assistant and keep the preview in view.</p>
+          <div className="eyebrow mb-2">Operator Rail</div>
+          <h3 className="text-2xl font-semibold tracking-tight text-white">Configure the assistant without leaving the preview.</h3>
+          <p className="mt-2 text-sm leading-6 text-slate-400">
+            This panel keeps brand behavior, trust settings, and overlay labeling inside one workflow.
+          </p>
         </div>
         <button
           type="button"
           aria-pressed={isChatOpen}
           aria-controls="assistant-preview-panel"
           onClick={onToggleChat}
-          className="focus-ring rounded-full border border-white/10 px-3 py-2 text-sm text-white transition-colors duration-200 hover:border-white/30 hover:bg-white/10"
+          className="focus-ring rounded-[10px] border border-white/10 bg-white/[0.04] px-3 py-2 text-sm font-semibold uppercase tracking-[0.12em] text-white transition-colors duration-200 hover:border-brand/30 hover:bg-brand/10"
         >
-          {isChatOpen ? 'Hide Chat' : 'Show Chat'}
+          {isChatOpen ? 'Hide chat' : 'Show chat'}
         </button>
       </div>
 
+      <div className="glow-divider mt-6" aria-hidden="true" />
+
       <div className="mt-6 space-y-5">
-        <div className="space-y-2">
-          <label htmlFor="greeting" className="text-sm font-medium text-slate-300">
+        <div className="surface-subtle rounded-[12px] p-4">
+          <label htmlFor="greeting" className="text-sm font-medium text-slate-200">
             Greeting
           </label>
           <textarea
@@ -56,13 +61,13 @@ export function WidgetControlPanel({
             value={config.greeting}
             onChange={(event) => onConfigChange({ ...config, greeting: event.target.value })}
             rows={3}
-            className={inputClassName}
+            className={`${inputClassName} mt-3`}
           />
         </div>
 
-        <div className="space-y-2">
-          <label htmlFor="overlay-label" className="text-sm font-medium text-slate-300">
-            Selected overlay label
+        <div className="surface-subtle rounded-[12px] p-4">
+          <label htmlFor="overlay-label" className="text-sm font-medium text-slate-200">
+            Active overlay label
           </label>
           <input
             id="overlay-label"
@@ -70,37 +75,62 @@ export function WidgetControlPanel({
             autoComplete="off"
             value={selectedOverlay?.label ?? ''}
             onChange={(event) => onOverlayLabelChange(event.target.value)}
-            className={inputClassName}
+            className={`${inputClassName} mt-3`}
             placeholder="Rename overlay..."
           />
-          <p className="text-xs leading-5 text-slate-500">Update the active canvas marker without relying on inline content editing.</p>
+          <p className="mt-2 text-xs leading-5 text-slate-500">Renaming stays explicit and accessible instead of relying on inline editable chips.</p>
         </div>
 
-        <div className="space-y-3">
-          <span className="text-sm font-medium text-slate-300">Brand color</span>
-          <div className="flex items-center gap-3">
-            <input
-              aria-label="Brand color"
-              type="color"
-              value={config.brandColor}
-              onChange={(event) => onConfigChange({ ...config, brandColor: event.target.value })}
-              className="focus-ring h-11 w-20 cursor-pointer rounded-xl border border-white/10 bg-transparent"
-            />
-            <span className="rounded-full bg-white/10 px-3 py-2 text-sm text-slate-200">{config.brandColor}</span>
+        <div className="grid gap-5 sm:grid-cols-2">
+          <div className="surface-subtle rounded-[12px] p-4">
+            <span className="text-sm font-medium text-slate-200">Brand color</span>
+            <div className="mt-3 flex items-center gap-3">
+              <input
+                aria-label="Brand color"
+                type="color"
+                value={config.brandColor}
+                onChange={(event) => onConfigChange({ ...config, brandColor: event.target.value })}
+                className="focus-ring h-11 w-20 cursor-pointer rounded-xl border border-white/10 bg-transparent"
+              />
+              <span className="rounded-[8px] border border-white/8 bg-white/[0.04] px-3 py-2 text-sm text-slate-200">{config.brandColor}</span>
+            </div>
+          </div>
+
+          <div className="surface-subtle flex items-center justify-between rounded-[12px] p-4">
+            <div>
+              <div id="show-sources-label" className="text-sm font-medium text-white">
+                Source citations
+              </div>
+              <div className="mt-1 text-xs leading-5 text-slate-400">Recommended for trust-heavy enterprise answers.</div>
+            </div>
+            <button
+              type="button"
+              role="switch"
+              aria-checked={config.showSources}
+              aria-labelledby="show-sources-label"
+              onClick={() => onConfigChange({ ...config, showSources: !config.showSources })}
+              className={`focus-ring relative h-7 w-12 rounded-[8px] transition-colors duration-200 ${config.showSources ? 'bg-brand' : 'bg-white/20'}`}
+            >
+              <span
+                className={`absolute top-1 h-5 w-5 rounded-[6px] bg-white transition-all duration-200 ${config.showSources ? 'left-6' : 'left-1'}`}
+              />
+            </button>
           </div>
         </div>
 
-        <fieldset>
-          <legend className="mb-2 text-sm font-medium text-slate-300">Assistant tone</legend>
-          <div className="grid grid-cols-3 gap-2">
+        <fieldset className="surface-subtle rounded-[12px] p-4">
+          <legend className="px-1 text-sm font-medium text-slate-200">Assistant tone</legend>
+          <div className="mt-3 grid grid-cols-3 gap-2">
             {toneOptions.map((tone) => (
               <button
                 key={tone}
                 type="button"
                 aria-pressed={config.tone === tone}
                 onClick={() => onConfigChange({ ...config, tone })}
-                className={`focus-ring rounded-2xl px-3 py-2 text-sm capitalize transition-colors duration-200 ${
-                  config.tone === tone ? 'bg-white text-slate-950' : 'bg-white/5 text-slate-300 hover:bg-white/10'
+                className={`focus-ring rounded-[10px] px-3 py-2 text-sm uppercase tracking-[0.12em] transition-all duration-200 ${
+                  config.tone === tone
+                    ? 'border border-brand/40 bg-brand/15 text-white shadow-[0_0_24px_rgba(123,92,255,0.2)]'
+                    : 'border border-white/8 bg-white/[0.03] text-slate-300 hover:bg-white/[0.06]'
                 }`}
               >
                 {tone}
@@ -109,17 +139,19 @@ export function WidgetControlPanel({
           </div>
         </fieldset>
 
-        <fieldset>
-          <legend className="mb-2 text-sm font-medium text-slate-300">Redaction style</legend>
-          <div className="grid grid-cols-3 gap-2">
+        <fieldset className="surface-subtle rounded-[12px] p-4">
+          <legend className="px-1 text-sm font-medium text-slate-200">Redaction style</legend>
+          <div className="mt-3 grid grid-cols-3 gap-2">
             {redactionOptions.map((style) => (
               <button
                 key={style}
                 type="button"
                 aria-pressed={redactionStyle === style}
                 onClick={() => onRedactionStyleChange(style)}
-                className={`focus-ring rounded-2xl px-3 py-2 text-sm capitalize transition-colors duration-200 ${
-                  redactionStyle === style ? 'bg-brand text-white' : 'bg-white/5 text-slate-300 hover:bg-white/10'
+                className={`focus-ring rounded-[10px] px-3 py-2 text-sm uppercase tracking-[0.12em] transition-all duration-200 ${
+                  redactionStyle === style
+                    ? 'border border-brand/40 bg-brand/15 text-white shadow-[0_0_24px_rgba(123,92,255,0.2)]'
+                    : 'border border-white/8 bg-white/[0.03] text-slate-300 hover:bg-white/[0.06]'
                 }`}
               >
                 {style}
@@ -128,38 +160,19 @@ export function WidgetControlPanel({
           </div>
         </fieldset>
 
-        <div className="flex items-center justify-between rounded-2xl bg-white/5 px-4 py-3">
-          <div>
-            <div id="show-sources-label" className="text-sm font-medium text-white">
-              Show sources
-            </div>
-            <div className="text-xs text-slate-400">Recommended AI assistant pattern for trust.</div>
-          </div>
-          <button
-            type="button"
-            role="switch"
-            aria-checked={config.showSources}
-            aria-labelledby="show-sources-label"
-            onClick={() => onConfigChange({ ...config, showSources: !config.showSources })}
-            className={`focus-ring relative h-7 w-12 rounded-full transition-colors duration-200 ${config.showSources ? 'bg-brand' : 'bg-white/20'}`}
-          >
-            <span
-              className={`absolute top-1 h-5 w-5 rounded-full bg-white transition-all duration-200 ${config.showSources ? 'left-6' : 'left-1'}`}
-            />
-          </button>
-        </div>
-
-        <fieldset>
-          <legend className="mb-2 text-sm font-medium text-slate-300">Canvas overlays</legend>
-          <div className="flex flex-wrap gap-2">
+        <fieldset className="surface-subtle rounded-[12px] p-4">
+          <legend className="px-1 text-sm font-medium text-slate-200">Canvas overlays</legend>
+          <div className="mt-3 flex flex-wrap gap-2">
             {overlayItems.map((item) => (
               <button
                 key={item.id}
                 type="button"
                 aria-pressed={selectedOverlay?.id === item.id}
                 onClick={() => onOverlaySelect(item.id)}
-                className={`focus-ring rounded-full px-3 py-2 text-sm transition-colors duration-200 ${
-                  selectedOverlay?.id === item.id ? 'bg-accent text-slate-950' : 'bg-white/5 text-slate-200 hover:bg-white/10'
+                className={`focus-ring rounded-[10px] px-3 py-2 text-sm uppercase tracking-[0.12em] transition-all duration-200 ${
+                  selectedOverlay?.id === item.id
+                    ? 'border border-brand/40 bg-brand/15 text-white shadow-[0_0_24px_rgba(123,92,255,0.2)]'
+                    : 'border border-white/8 bg-white/[0.03] text-slate-200 hover:bg-white/[0.06]'
                 }`}
               >
                 {item.label}

@@ -22,6 +22,8 @@ Orbit Assist is a frontend concept for an embedded AI support experience inside 
 
 ![Orbit Assist mobile home page](docs/screenshots/home-mobile.png)
 
+These screenshots reflect the current visual direction of the project: a darker embedded AI product aesthetic with sharper geometry and a fully local Times New Roman-based type system.
+
 ## What I Wanted This Project To Demonstrate
 
 I designed this repo to show that I can:
@@ -67,7 +69,7 @@ npm install
 npm run dev
 ```
 
-Then open `http://localhost:4177`.
+Then open the local URL printed by Vite, typically `http://localhost:5173`.
 
 ## Validation
 

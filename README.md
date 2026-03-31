@@ -1,4 +1,4 @@
-# Orbit Assist Demo
+# Orbit Assist Widge
 
 Orbit Assist is a portfolio project for an embedded AI support experience inside a B2B product surface. I built it to demonstrate how I approach product interface work end to end: shaping the concept, defining the UI architecture, designing the interaction model, building the component system, and presenting the result as something that feels credible rather than purely decorative.
 

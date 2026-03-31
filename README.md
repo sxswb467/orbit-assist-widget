@@ -4,6 +4,24 @@ I built this project as a portfolio piece to show how I approach modern SaaS fro
 
 Orbit Assist is a frontend concept for an embedded AI support experience inside a B2B product surface. I use it to demonstrate the kind of work I want to be hired for: thoughtful UI architecture, interaction design, accessibility, design-system discipline, and product interfaces that feel believable rather than purely decorative.
 
+## Screenshots
+
+### Home Page
+
+![Orbit Assist home page](docs/screenshots/home-desktop.png)
+
+### Playground
+
+![Orbit Assist playground page](docs/screenshots/playground-desktop.png)
+
+### Design System
+
+![Orbit Assist design system page](docs/screenshots/design-system-desktop.png)
+
+### Mobile View
+
+![Orbit Assist mobile home page](docs/screenshots/home-mobile.png)
+
 ## What I Wanted This Project To Demonstrate
 
 I designed this repo to show that I can:

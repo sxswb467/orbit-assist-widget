@@ -1,6 +1,8 @@
 import { expect, test } from '@playwright/test';
 
-test('widget controls update the live preview', async ({ page }) => {
+test('widget controls update the live preview', async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name.includes('mobile'), 'Widget interaction flow is covered on desktop where the split layout is visible.');
+
   await page.goto('/playground');
 
   const overlayInput = page.getByLabel('Selected overlay label');

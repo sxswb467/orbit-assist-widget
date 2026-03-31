@@ -8,9 +8,11 @@ test('mobile navigation opens and routes to the design system page', async ({ pa
   await expect(menuButton).toBeVisible();
 
   await menuButton.click();
-  await expect(page.getByRole('link', { name: 'Design System' })).toBeVisible();
+  const mobileNav = page.getByRole('navigation', { name: 'Mobile primary' });
+  const designSystemLink = mobileNav.getByRole('link', { name: 'Design System', exact: true });
+  await expect(designSystemLink).toBeVisible();
 
-  await page.getByRole('link', { name: 'Design System' }).click();
+  await designSystemLink.click();
   await expect(page.getByRole('heading', { name: /tokens, surface rules/i })).toBeVisible();
   await expect(page.getByRole('button', { name: /open navigation menu/i })).toBeVisible();
 });

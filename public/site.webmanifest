@@ -1,0 +1,8 @@
+{
+  "name": "Orbit Assist Demo",
+  "short_name": "OrbitAssist",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0f172a",
+  "theme_color": "#5b6cf8"
+}

@@ -1,17 +1,18 @@
+import { PageSection } from '../components/PageSection';
 import { SectionHeading } from '../components/SectionHeading';
 import { WidgetSimulator } from '../components/WidgetSimulator';
 
 export function PlaygroundPage() {
   return (
-    <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+    <PageSection className="py-16 lg:py-20">
       <SectionHeading
         eyebrow="Playground"
-        title="A dedicated page for the embeddable AI widget experience"
-        body="Use this route as the strongest portfolio proof point. It focuses on the exact interaction patterns often requested in SaaS frontend jobs: settings panels, live previews, motion-led layout changes, draggable objects, and AI chat."
+        title="The widget experience with room for focused exploration"
+        body="This route isolates the strongest interaction story in the repo: operator controls, live preview, source-aware chat, and a host canvas that updates as the configuration changes."
       />
       <div className="mt-10">
         <WidgetSimulator expanded />
       </div>
-    </div>
+    </PageSection>
   );
 }

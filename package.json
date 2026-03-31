@@ -4,9 +4,13 @@
   "version": "1.0.0",
   "type": "module",
   "scripts": {
-    "dev": "vite",
-    "build": "tsc -b && vite build",
-    "preview": "vite preview --port 4179"
+    "dev": "node scripts/run-vite.mjs",
+    "typecheck": "node node_modules/typescript/lib/tsc.js -b",
+    "build": "npm run typecheck && node scripts/run-vite.mjs build",
+    "preview": "node scripts/run-vite.mjs preview --port 4179",
+    "test:visual:install": "node node_modules/playwright/cli.js install chromium",
+    "test:visual": "node node_modules/playwright/cli.js test",
+    "test:visual:update": "node node_modules/playwright/cli.js test --update-snapshots"
   },
   "dependencies": {
     "framer-motion": "^11.3.19",
@@ -15,14 +19,16 @@
     "react-router-dom": "^6.26.1"
   },
   "devDependencies": {
+    "@playwright/test": "^1.52.0",
+    "@types/node": "^22.5.4",
     "@types/react": "^18.3.5",
     "@types/react-dom": "^18.3.0",
     "@vitejs/plugin-react": "^4.3.1",
     "autoprefixer": "^10.4.20",
+    "playwright": "^1.52.0",
     "postcss": "^8.4.41",
     "tailwindcss": "^3.4.10",
     "typescript": "^5.5.4",
-    "vite": "^5.4.2",
-    "@types/node": "^22.5.4"
+    "vite": "^5.4.2"
   }
 }

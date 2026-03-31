@@ -11,7 +11,7 @@ export const defaultWidgetConfig: WidgetConfig = {
 export const overlaySeed: OverlayItem[] = [
   { id: '1', label: 'ARR +18%', x: 16, y: 24, width: 112, kind: 'metric' },
   { id: '2', label: 'Redaction zone', x: 220, y: 64, width: 148, kind: 'chip' },
-  { id: '3', label: 'Edit in place', x: 114, y: 182, width: 132, kind: 'note' },
+  { id: '3', label: 'Renewal blocker', x: 114, y: 182, width: 148, kind: 'note' },
 ];
 
 export const chatMessages = [
@@ -31,19 +31,19 @@ export const chatMessages = [
 
 export const featureCards = [
   {
-    title: 'Embeddable widget UX',
-    body: 'Preview the support assistant in a host app frame and export a copy-paste embed snippet.',
+    title: 'Navigation that works on mobile',
+    body: 'The layout now includes a dedicated mobile menu instead of hiding primary routes below the desktop breakpoint.',
   },
   {
-    title: 'Motion with purpose',
-    body: 'Use Framer Motion for hierarchy, feedback, and layout transitions rather than decoration only.',
+    title: 'Less portfolio narration, more product framing',
+    body: 'The first viewport emphasizes the operator workflow and preview model instead of a generic stack of self-describing feature cards.',
   },
   {
-    title: 'Accessible by default',
-    body: 'Visible focus states, semantic labels, keyboard-friendly controls, and reduced-motion support.',
+    title: 'Accessible control language',
+    body: 'Segmented controls, switches, placeholders, and form fields now have stronger focus treatment and more explicit semantics.',
   },
   {
-    title: 'Figma-friendly structure',
-    body: 'Token-driven styling and simple component composition keep handoff and iteration fast.',
+    title: 'Shared surfaces over repeated hardcoding',
+    body: 'Global surface classes and section framing reduce the amount of one-off panel styling spread across the routes.',
   },
 ];

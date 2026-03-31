@@ -1,17 +1,18 @@
 import { DesignTokenPanel } from '../components/DesignTokenPanel';
+import { PageSection } from '../components/PageSection';
 import { SectionHeading } from '../components/SectionHeading';
 
 export function DesignSystemPage() {
   return (
-    <div className="mx-auto max-w-7xl px-6 py-16 lg:px-8">
+    <PageSection className="py-16 lg:py-20">
       <SectionHeading
-        eyebrow="Design system"
-        title="Design tokens, reusable structure, and handoff notes"
-        body="This route highlights the project as a Figma-to-code capable frontend system. The goal is not to mimic a huge component library, but to show clarity, consistency, and the kind of design translation discipline clients want in production work."
+        eyebrow="Design System"
+        title="Tokens, surface rules, and handoff-ready decisions"
+        body="This route now reflects the same architecture as the rest of the app: shared section framing, reusable surfaces, and a token story that backs the UI instead of existing only as a presentation artifact."
       />
       <div className="mt-10">
         <DesignTokenPanel />
       </div>
-    </div>
+    </PageSection>
   );
 }

@@ -1,0 +1,8 @@
+{
+  "plugin_name": "ai-agent-kit",
+  "bundle": "full",
+  "plugin_root": "/home/shxu6388/plugins/ai-agent-kit",
+  "marketplace_path": "/home/shxu6388/.agents/plugins/marketplace.json",
+  "source_repo": "/home/shxu6388/ai-agent-kit",
+  "integrated_at": "2026-04-06T21:59:07+00:00"
+}

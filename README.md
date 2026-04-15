@@ -60,13 +60,12 @@ These screenshots reflect the current visual direction of the project: an embedd
 
 This project is a frontend-only product simulation:
 
-Frontend (React + TypeScript)
-  ↓
-Configuration layer (widget controls, presets, design tokens)
-  ↓
-Preview layer (embedded assistant simulation and responsive layouts)
-  ↓
-Storage (local component state)
+```mermaid
+flowchart TD
+    A["Frontend (React + TypeScript)"] --> B["Configuration layer (widget controls, presets, design tokens)"]
+    B --> C["Preview layer (embedded assistant simulation and responsive layouts)"]
+    C --> D["Storage (local component state)"]
+```
 
 Updates happen through:
 

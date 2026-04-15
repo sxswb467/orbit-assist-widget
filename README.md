@@ -18,6 +18,15 @@ This type of system is commonly used for:
 - Internal knowledge copilots for operators or account teams
 - White-label assistant widgets for software platforms
 
+## Why this matters
+
+This type of system is useful for:
+
+- SaaS products that want embedded AI without building a full standalone app
+- Customer experience teams improving onboarding and in-app guidance
+- Internal tools that need contextual help directly inside the product surface
+- Platforms offering configurable assistant experiences to multiple clients
+
 ## Screenshots
 
 ### Home Page
@@ -46,6 +55,23 @@ These screenshots reflect the current visual direction of the project: an embedd
 - Reusable sections, tokens, and component primitives
 - Motion and interaction details that reinforce hierarchy and feedback
 - Responsive behavior across marketing and application-style pages
+
+## Architecture overview
+
+This project is a frontend-only product simulation:
+
+Frontend (React + TypeScript)
+  ↓
+Configuration layer (widget controls, presets, design tokens)
+  ↓
+Preview layer (embedded assistant simulation and responsive layouts)
+  ↓
+Storage (local component state)
+
+Updates happen through:
+
+- Immediate client-side preview changes
+- Shared UI tokens and component state
 
 ## Stack
 
